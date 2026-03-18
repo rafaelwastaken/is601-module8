@@ -239,7 +239,7 @@ class TestCalculatorUI:
         page.fill("#num1", "5")
         page.fill("#num2", "0")
         page.click("button:has-text('Multiply')")
-        expect(result).to_contain_text("^0$")
+        expect(result).to_have_text("0")
 
 
 if __name__ == "__main__":
