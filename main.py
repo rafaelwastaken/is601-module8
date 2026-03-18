@@ -52,7 +52,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     error_messages = "; ".join([f"{err['loc'][-1]}: {err['msg']}" for err in exc.errors()])
     logger.error(f"ValidationError on {request.url.path}: {error_messages}")
     return JSONResponse(
-        status_code=400,
+        status_code=422,
         content={"error": error_messages},
     )
 
